@@ -17,8 +17,8 @@ const form = document.querySelector('.form');
         const arrayData = getImagesByQuery(searchText)
             .then(response => {
                 const markup = createGallery(response.data.hits);
-                elemGalary.outerHTML = markup;
-                // console.log(markup);
+                elemGalary.innerHTML = markup;
+                console.log(markup);
             })
             .catch(err=>console.error(err));
         // console.log();
