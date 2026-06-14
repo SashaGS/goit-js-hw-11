@@ -6,5 +6,5 @@ import{a as i}from"./assets/vendor-CBgSAh9K.js";(function(){const o=document.cre
             alt="${t.tags}"
           />
         </a>
-    </li>`}function d(t){return t.map(m).join("")}const p=document.querySelector("ul.gallery"),c=document.querySelector(".form");c.addEventListener("submit",t=>{t.preventDefault();const s=new FormData(c).get("search-text");u(s).then(a=>{const e=f(a.data.hits);p.outerHTML=e}).catch(a=>console.error(a))});
+    </li>`}function d(t){return t.map(m).join("")}const p=document.querySelector("ul.gallery"),c=document.querySelector(".form");c.addEventListener("submit",t=>{t.preventDefault();const s=new FormData(c).get("search-text");u(s).then(a=>{const e=f(a.data.hits);p.innerHTML=e,console.log(e)}).catch(a=>console.error(a))});
 //# sourceMappingURL=index.js.map
