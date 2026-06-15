@@ -31,6 +31,10 @@ function imageTamplate(image) {
           <div class="caption">
               <label>Likes</label>
               <p>lk</p>
+              <label>Likes</label>
+              <p>lk</p>
+              <label>Likes</label>
+              <p>lk</p>
           </div>        
         </a>        
     </li>`;
