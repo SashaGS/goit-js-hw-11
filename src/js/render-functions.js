@@ -12,7 +12,7 @@ export function createGallery(images) {
 
    let gallery = new SimpleLightbox('.gallery a',{
         captions: true,              // вмикає підписи
-        captionsData: 'alt',         // джерело підпису — атрибут alt
+        // captionsData: 'alt',         // джерело підпису — атрибут alt
         captionPosition: 'bottom',   // позиція підпису знизу
         captionDelay: 250            // затримка у мілісекундах
    });     
