@@ -6,8 +6,7 @@ const myApiKey = "56294384-c3e46a2de7dfa7e052cf699f1";
 
 axios.defaults.baseURL = 'https://pixabay.com/api/';
 
-export
-    function getImagesByQuery(query) {
+export function getImagesByQuery(query) {
     const searchParams = new URLSearchParams({
     key:myApiKey,
     q:query,

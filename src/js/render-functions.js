@@ -3,8 +3,20 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 
+const elemGalary = document.querySelector('ul.gallery');
+
 export function createGallery(images) { 
-    return imagesTamplate(images);    
+    const markup = imagesTamplate(images); 
+    elemGalary.innerHTML = markup;
+    console.log(markup);   
+
+   let gallery = new SimpleLightbox('.gallery a',{
+        captions: true,              // вмикає підписи
+        captionsData: 'alt',         // джерело підпису — атрибут alt
+        captionPosition: 'bottom',   // позиція підпису знизу
+        captionDelay: 250            // затримка у мілісекундах
+   });     
+
 }
 
 function imageTamplate(image) { 

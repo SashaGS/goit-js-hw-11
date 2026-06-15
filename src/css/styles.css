@@ -8,3 +8,42 @@
 @import url('./reset.css');
 @import url('./base.css');
 
+.form{
+  max-width: 371px;
+  margin: 0 auto;
+}
+
+.input-search-js{
+  margin-top: 36px;
+  padding: 8px 16px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+
+}
+
+.input-search-js::placeholder{
+  color: #808080;
+  line-height: 24;
+  letter-spacing: 4;
+}
+
+.input-search-js:hover{
+  border-color: #000000;
+}
+
+.input-search-js:focus{
+  border-color: #4E75FF;
+  color: #2E2F42;
+}
+
+.btn-js{
+   padding: 8px 16px;
+   border-radius: 4px;
+   background-color: #4E75FF;
+   color:#FFFFFF ;
+}
+
+.btn-js:hover{
+  background-color: #6C8CFF;
+}
+

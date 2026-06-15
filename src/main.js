@@ -5,8 +5,6 @@ import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
 
-const elemGalary = document.querySelector('ul.gallery');
-
 // Pixabay
 const form = document.querySelector('.form');
     form.addEventListener('submit', (e) => { 
@@ -16,9 +14,7 @@ const form = document.querySelector('.form');
         // console.log(searchText);
         const arrayData = getImagesByQuery(searchText)
             .then(response => {
-                const markup = createGallery(response.data.hits);
-                elemGalary.innerHTML = markup;
-                console.log(markup);
+                createGallery(response.data.hits);
             })
             .catch(err=>console.error(err));
         // console.log();
