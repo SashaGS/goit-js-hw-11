@@ -74,7 +74,8 @@
 
 .caption {
   display: flex;
-  position: absolute;
+  gap: 28px;
+  position: absolute; 
   bottom: 0;             /* подпись внизу картинки */
   left: 0;
   width: 100%;
@@ -82,5 +83,5 @@
   color:#2E2F42;
   font-size: 12px;
   /* text-align: center; */
-  padding: 4px 0;
+  padding: 4px 20px;
 }
