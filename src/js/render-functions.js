@@ -28,14 +28,24 @@ function imageTamplate(image) {
             src="${image.webformatURL}"
             alt="${image.tags}"
           />          
-          <div class="caption">
-              <label>Likes</label>
-              <p>lk</p>
-              <label>Likes</label>
-              <p>lk</p>
-              <label>Likes</label>
-              <p>lk</p>
-          </div>        
+          <ul class="caption">
+              <li class="cap-item">
+                  <label>Likes</label>
+                  <p>${image.likes}</p>
+              </li>
+              <li class="cap-item">
+                  <label>Views</label>
+                  <p>${image.views}</p>
+              </li>
+              <li class="cap-item">
+                  <label>Comments</label>
+                  <p>${image.comments}</p>
+              </li>
+              <li class="cap-item">
+                  <label>Downloads</label>
+                  <p>${image.downloads}</p>
+              </li>
+          </ul>        
         </a>        
     </li>`;
 };    
