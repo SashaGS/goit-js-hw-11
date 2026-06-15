@@ -21,14 +21,18 @@ export function createGallery(images) {
 
 function imageTamplate(image) { 
     // console.log(image.largeImageURL);
-    return `<li class="gallery-item">
+    return `<li class="gallery-item"> 
         <a class="gallery-link" href="${image.largeImageURL}">
           <img
             class="gallery-image"
             src="${image.webformatURL}"
             alt="${image.tags}"
-          />
-        </a>
+          />          
+          <div class="caption">
+              <label>Likes</label>
+              <p>lk</p>
+          </div>        
+        </a>        
     </li>`;
 };    
 
