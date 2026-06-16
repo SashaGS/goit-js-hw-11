@@ -63,6 +63,7 @@ export function clearGallery(elemGalary){
 
 export function showLoader() {
   document.querySelector('.loader').classList.remove('hidden');
+//   console.log('show');
 }
 
 export function hideLoader() {

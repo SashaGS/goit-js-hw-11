@@ -12,8 +12,9 @@ const elemGalary = document.querySelector('ul.gallery');
 const form = document.querySelector('.form');
     form.addEventListener('submit', (e) => { 
         e.preventDefault(); 
+        elemGalary.innerHTML ='';
         showLoader();
-                 
+        setTimeout(() => {
         const formData = new FormData(form);
         const searchText = formData.get('search-text');
         // console.log(searchText);
@@ -36,8 +37,7 @@ const form = document.querySelector('.form');
                     clearGallery(elemGalary);
                 }     
             })
-            .catch(err=> console.log(err)).finally(hideLoader());
+            .catch(err=> console.log(err)).finally(hideLoader());},1000);
         // console.log();
     });
-
 
