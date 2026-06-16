@@ -66,11 +66,18 @@ export function clearGallery(elemGalary){
 
 
 export function showLoader() {
-  document.querySelector('.loader').classList.remove('hidden');
+    const loader = document.querySelector('.loader');
+    if (loader !== undefined) {
+       document.querySelector('.loader').classList.remove('hidden'); 
+    }
+    
 }
 
 
 export function hideLoader() {
-  document.querySelector('.loader').classList.add('hidden');
+    const loader = document.querySelector('.loader');
+    if (loader !== undefined) {
+        document.querySelector('.loader').classList.add('hidden');
+    }
 }
 

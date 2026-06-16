@@ -13,13 +13,13 @@ const form = document.querySelector('.form');
     form.addEventListener('submit', (e) => { 
         e.preventDefault(); 
         clearGallery(elemGalary);
-        // showLoader();
+        showLoader();
         // setTimeout(() => {
         const formData = new FormData(form);
         const searchText = formData.get('search-text');
         const arrayData = getImagesByQuery(searchText)
             .then(data => {
-                const marray = data;
+                const marray = data.hits;
                 if (Array.isArray(marray) && marray.length !== 0 ) {
                     console.log(marray.length);
                     createGallery(marray,elemGalary);               
@@ -31,11 +31,8 @@ const form = document.querySelector('.form');
                     position:'topRight',
                     radius: 35,
                     maxWidth:500}); 
-                    clearGallery(elemGalary);
                 }     
             })
-            .catch(err => console.log(err));
-        // hideLoader();
-        
+            .catch(err => console.error(err)).finally(hideLoader);
     });
 
