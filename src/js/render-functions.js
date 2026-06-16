@@ -2,16 +2,16 @@
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
+let gallery;
+// const elemGalary = document.querySelector('ul.gallery');
+// elemGalary.innerHTML = `<span class="loader hidden"></span>`;
 
-const elemGalary = document.querySelector('ul.gallery');
-
-export function createGallery(images) { 
+export function createGallery(images,elemGalary) { 
     const markup = imagesTamplate(images); 
     elemGalary.innerHTML = markup;
-    // elemGalary.innerHTML = `<p>""</p>`;
     // console.log(markup);   
 
-   let gallery = new SimpleLightbox('.gallery a',{
+    gallery = new SimpleLightbox('.gallery a',{
         captions: true,              // вмикає підписи
         captionsData: 'alt',         // джерело підпису — атрибут alt
         captionPosition: 'bottom',   // позиція підпису знизу
@@ -23,7 +23,7 @@ export function createGallery(images) {
 function imageTamplate(image) { 
     // console.log(image.largeImageURL);
     return `<li class="gallery-item"> 
-        <a class="gallery-link" href="${image.largeImageURL}">
+        <a class="gallery-link" href="${image.largeImageURL}">    
           <img
             class="gallery-image"
             src="${image.webformatURL}"
@@ -55,9 +55,17 @@ function imagesTamplate(images) {
     return images.map(imageTamplate).join('');
 };
 
-export function clearGallery(){
-    
-    elemGalary.innerHTML = `<p> </p>`;
+export function clearGallery(elemGalary){
+
+    elemGalary.innerHTML = '';
     gallery.destroy();
-    
 };
+
+export function showLoader() {
+  document.querySelector('.loader').classList.remove('hidden');
+}
+
+export function hideLoader() {
+  document.querySelector('.loader').classList.add('hidden');
+}
+/* <span class="loader"></span> */

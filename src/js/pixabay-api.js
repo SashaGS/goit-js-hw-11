@@ -1,12 +1,13 @@
 
 import axios from "axios";
-
+import { showLoader,hideLoader } from './render-functions'
 
 const myApiKey = "56294384-c3e46a2de7dfa7e052cf699f1";
 
 axios.defaults.baseURL = 'https://pixabay.com/api/';
 
 export function getImagesByQuery(query) {
+    showLoader();
     const searchParams = new URLSearchParams({
     key:myApiKey,
     q:query,
@@ -15,7 +16,9 @@ export function getImagesByQuery(query) {
     safesearch:"true" 
     });
     
+    // const resp = axios.get(`?${searchParams}`);
     return axios.get(`?${searchParams}`);
+
 }
 
 
