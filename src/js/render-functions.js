@@ -3,14 +3,11 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 let gallery;
-// const elemGalary = document.querySelector('ul.gallery');
-// elemGalary.innerHTML = `<span class="loader hidden"></span>`;
+
 
 export function createGallery(images,elemGalary) { 
     const markup = imagesTamplate(images); 
     elemGalary.innerHTML = markup;
-    // console.log(markup);   
-
     gallery = new SimpleLightbox('.gallery a',{
         captions: true,              // вмикає підписи
         captionsData: 'alt',         // джерело підпису — атрибут alt
@@ -20,8 +17,9 @@ export function createGallery(images,elemGalary) {
     gallery.refresh();
 }
 
+
 function imageTamplate(image) { 
-    // console.log(image.largeImageURL);
+
     return `<li class="gallery-item"> 
         <a class="gallery-link" href="${image.largeImageURL}">    
           <img
@@ -51,22 +49,24 @@ function imageTamplate(image) {
     </li>`;
 };    
 
+
 function imagesTamplate(images) { 
     return images.map(imageTamplate).join('');
 };
 
-export function clearGallery(elemGalary){
 
+export function clearGallery(elemGalary){
     elemGalary.innerHTML = '';
     gallery.destroy();
 };
 
+
 export function showLoader() {
   document.querySelector('.loader').classList.remove('hidden');
-//   console.log('show');
 }
+
 
 export function hideLoader() {
   document.querySelector('.loader').classList.add('hidden');
 }
-/* <span class="loader"></span> */
+

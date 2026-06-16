@@ -6,7 +6,7 @@ import "izitoast/dist/css/iziToast.min.css";
 
 
 const elemGalary = document.querySelector('ul.gallery');
-// elemGalary.innerHTML = `<span class="loader hidden"></span>`;
+
 
 // Pixabay
 const form = document.querySelector('.form');
@@ -17,16 +17,13 @@ const form = document.querySelector('.form');
         setTimeout(() => {
         const formData = new FormData(form);
         const searchText = formData.get('search-text');
-        // console.log(searchText);
         const arrayData = getImagesByQuery(searchText)
             .then(response => {
                 const marray = response.data.hits;
                 if (Array.isArray(marray) && marray.length !== 0 ) {
                     console.log(marray.length);
-                    createGallery(marray,elemGalary);  
-                    // hideLoader();             
-                } else {                   
-                    // console.log(marray);              
+                    createGallery(marray,elemGalary);               
+                } else {                               
                     iziToast.show({
                     title: 'icon',
                     message: `Sorry, there are no images matching your search query. Please try again!`,
@@ -38,6 +35,6 @@ const form = document.querySelector('.form');
                 }     
             })
             .catch(err=> console.log(err)).finally(hideLoader());},1000);
-        // console.log();
+        
     });
 
