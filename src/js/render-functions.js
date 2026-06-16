@@ -8,6 +8,7 @@ const elemGalary = document.querySelector('ul.gallery');
 export function createGallery(images) { 
     const markup = imagesTamplate(images); 
     elemGalary.innerHTML = markup;
+    // elemGalary.innerHTML = `<p>""</p>`;
     // console.log(markup);   
 
    let gallery = new SimpleLightbox('.gallery a',{
@@ -52,4 +53,11 @@ function imageTamplate(image) {
 
 function imagesTamplate(images) { 
     return images.map(imageTamplate).join('');
+};
+
+export function clearGallery(){
+    
+    elemGalary.innerHTML = `<p> </p>`;
+    gallery.destroy();
+    
 };

@@ -1,5 +1,5 @@
 import { getImagesByQuery } from './js/pixabay-api'
-import { createGallery } from './js/render-functions'
+import { createGallery,clearGallery } from './js/render-functions'
 
 import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
@@ -19,14 +19,16 @@ const form = document.querySelector('.form');
                     console.log(marray.length);
                     createGallery(marray);               
                 } else {                   
-                    console.log(marray); 
+                    // console.log(marray); 
+                   
                     iziToast.show({
                     title: 'icon',
                     message: `Sorry, there are no images matching your search query. Please try again!`,
                     backgroundColor: '#EF4040',
                     position:'topRight',
                     radius: 35,
-                    maxWidth:500}) 
+                    maxWidth:500}); 
+                    clearGallery();
                 }     
             })
             .catch(err=> console.log(err));
