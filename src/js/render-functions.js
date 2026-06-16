@@ -57,7 +57,10 @@ function imagesTamplate(images) {
 
 export function clearGallery(elemGalary){
     elemGalary.innerHTML = '';
-    gallery.destroy();
+    if (gallery !== undefined) {
+        gallery.destroy();
+    } 
+    
 };
 
 
