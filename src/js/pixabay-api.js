@@ -8,6 +8,7 @@ axios.defaults.baseURL = 'https://pixabay.com/api/';
 
 
 export function getImagesByQuery(query) {
+    showLoader();
     const searchParams = new URLSearchParams({
     key:myApiKey,
     q:query,
@@ -16,5 +17,8 @@ export function getImagesByQuery(query) {
     safesearch:"true" 
     });
     
-    return axios.get(`?${searchParams}`);
+    const mdata = axios.get(`?${searchParams}`).then(response =>
+       response.data.hits);
+    hideLoader();
+    return mdata;
 }

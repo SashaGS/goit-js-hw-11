@@ -59,6 +59,7 @@ export function clearGallery(elemGalary){
     elemGalary.innerHTML = '';
     if (gallery !== undefined) {
         gallery.destroy();
+        // console.log(gallery);
     } 
     
 };
