@@ -67,7 +67,7 @@ export function clearGallery(elemGalary){
 
 export function showLoader() {
     const loader = document.querySelector('.loader');
-    if (loader !== undefined) {
+    if (loader) {
        document.querySelector('.loader').classList.remove('hidden'); 
     }
     
@@ -76,7 +76,7 @@ export function showLoader() {
 
 export function hideLoader() {
     const loader = document.querySelector('.loader');
-    if (loader !== undefined) {
+    if (loader) {
         document.querySelector('.loader').classList.add('hidden');
     }
 }
