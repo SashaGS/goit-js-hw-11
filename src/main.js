@@ -18,13 +18,14 @@ const form = document.querySelector('.form');
         const formData = new FormData(form);
         const searchText = formData.get('search-text');
         if (searchText === "") {
+           hideLoader(); 
            iziToast.show({
                     title: 'Error',
                     message: `Empty search field`,
                     backgroundColor: '#c4501b',
                     position:'topRight',
                     radius: 35,
-                    maxWidth:500});  
+                    maxWidth:500});          
             return;        
         }
         const arrayData = getImagesByQuery(searchText)

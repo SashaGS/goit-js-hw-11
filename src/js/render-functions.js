@@ -65,19 +65,16 @@ export function clearGallery(elemGalary){
 };
 
 
-export function showLoader() {
-    
+export function showLoader() {  
     if (loader) {
-       document.querySelector('.loader').classList.remove('hidden'); 
+       loader.classList.remove('hidden'); 
     }
-    
 }
 
 
 export function hideLoader() {
-   
-    if (loader) {
-        document.querySelector('.loader').classList.add('hidden');
+    if (loader) { 
+        loader.classList.add('hidden');
     }
 }
 
