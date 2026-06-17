@@ -18,7 +18,7 @@ const form = document.querySelector('.form');
         const formData = new FormData(form);
         const searchText = formData.get('search-text');
         if (searchText === "") {
-           hideLoader(); 
+        //    hideLoader(); 
            iziToast.show({
                     title: 'Error',
                     message: `Empty search field`,
@@ -26,13 +26,13 @@ const form = document.querySelector('.form');
                     position:'topRight',
                     radius: 35,
                     maxWidth:500});          
-            return;        
+            // return;        
         }
-        const arrayData = getImagesByQuery(searchText)
+        getImagesByQuery(searchText)
             .then(data => {
                 const marray = data.hits;
                 if (marray.length !== 0 ) {
-                    console.log(marray.length);
+                    // console.log(marray.length);
                     createGallery(marray,elemGalary);               
                 } else {                               
                     iziToast.show({
