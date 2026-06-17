@@ -2,18 +2,18 @@
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-let gallery;
-const loader = document.querySelector('.loader');
-
-export function createGallery(images,elemGalary) { 
-    const markup = imagesTamplate(images); 
-    elemGalary.innerHTML = markup;
-    gallery = new SimpleLightbox('.gallery a',{
+let  gallery = new SimpleLightbox('.gallery a',{
         captions: true,              // вмикає підписи
         captionsData: 'alt',         // джерело підпису — атрибут alt
         captionPosition: 'bottom',   // позиція підпису знизу
         captionDelay: 250            // затримка у мілісекундах
    });  
+
+const loader = document.querySelector('.loader');
+
+export function createGallery(images,elemGalary) { 
+    const markup = imagesTamplate(images); 
+    elemGalary.innerHTML = markup;
     gallery.refresh();
 }
 
@@ -57,10 +57,10 @@ function imagesTamplate(images) {
 
 export function clearGallery(elemGalary){
     elemGalary.innerHTML = '';
-    if (gallery !== undefined) {
-        gallery.destroy();
-        // console.log(gallery);
-    } 
+    // if (gallery !== undefined) {
+    //     gallery.destroy();
+    //     // console.log(gallery);
+    // } 
     
 };
 

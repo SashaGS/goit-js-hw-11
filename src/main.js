@@ -5,19 +5,19 @@ import iziToast from "izitoast";
 import "izitoast/dist/css/iziToast.min.css";
 
 
-const elemGalary = document.querySelector('ul.gallery');
+const elemGallary = document.querySelector('ul.gallery');
 
 
 // Pixabay
 const form = document.querySelector('.form');
     form.addEventListener('submit', (e) => { 
         e.preventDefault(); 
-        clearGallery(elemGalary);
+        clearGallery(elemGallary);
         showLoader();
         // setTimeout(() => {
         const formData = new FormData(form);
-        const searchText = formData.get('search-text');
-        if (searchText === "") {
+        const searchText = formData.get('search-text').trim();
+        if (searchText.length === 0) {
         //    hideLoader(); 
            iziToast.show({
                     title: 'Error',
@@ -33,7 +33,7 @@ const form = document.querySelector('.form');
                 const marray = data.hits;
                 if (marray.length !== 0 ) {
                     // console.log(marray.length);
-                    createGallery(marray,elemGalary);               
+                    createGallery(marray,elemGallary);               
                 } else {                               
                     iziToast.show({
                     title: 'Error',
@@ -47,7 +47,7 @@ const form = document.querySelector('.form');
             .catch(err => iziToast.error({
                     title: 'Error',
                     message: `${err}`,
-                    backgroundColor: '#EF4040',
+                    backgroundColor: '#efdb40',
                     position:'topRight',
                     radius: 35,
                     maxWidth:500})).finally(() => hideLoader());
