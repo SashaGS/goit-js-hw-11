@@ -17,6 +17,16 @@ const form = document.querySelector('.form');
         // setTimeout(() => {
         const formData = new FormData(form);
         const searchText = formData.get('search-text');
+        if (searchText === "") {
+           iziToast.show({
+                    title: 'Error',
+                    message: `Empty search field`,
+                    backgroundColor: '#c4501b',
+                    position:'topRight',
+                    radius: 35,
+                    maxWidth:500});  
+            return;        
+        }
         const arrayData = getImagesByQuery(searchText)
             .then(data => {
                 const marray = data.hits;
